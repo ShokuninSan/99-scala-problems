@@ -1,5 +1,5 @@
-// Buildin
-def lastBuildin[A](l: List[A]): A = l.last
+// Builtin
+def lastBuiltin[A](l: List[A]): A = l.last
 
 def last[A](l: List[A]): A = l match {
   case x :: Nil => x
