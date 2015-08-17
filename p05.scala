@@ -13,4 +13,4 @@ def reverseRecursive[A](l: List[A]): List[A] = {
 }
 
 // Fold
-def reverseFold[A](l: List[A]): List[A] = ???
+def reverseFoldL[A](l: List[A]): List[A] = l.foldLeft(List.empty[A]) { (acc, e) => e :: acc }
