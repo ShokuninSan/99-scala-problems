@@ -10,6 +10,13 @@ res0: List[List[Symbol]] = List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), Li
 */
 object P09 {
 
-  def pack[T](xs: List[T]): List[List[T]] = ???
+  def pack[T](xs: List[T]) = xs.foldRight(List(List[T]())) {
+    (x, xxs) =>
+      xxs match {
+        case h :: t if h.isEmpty => List(x) :: t
+        case h :: t if h.head == x => (x :: h) :: t
+        case _ => List(x) :: xxs
+      }
+  }
 
 }
