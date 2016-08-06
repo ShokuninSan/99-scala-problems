@@ -11,4 +11,8 @@ class P14Spec extends FlatSpec with Matchers {
     duplicateFolded(List('a, 'b, 'c, 'c, 'd)) should equal (List('a, 'a, 'b, 'b, 'c, 'c, 'c, 'c, 'd, 'd))
   }
 
+  "duplicateFlatMapped" should "duplicate the elements of a list" in {
+    duplicateFlatMapped(List('a, 'b, 'c, 'c, 'd)) should equal (List('a, 'a, 'b, 'b, 'c, 'c, 'c, 'c, 'd, 'd))
+  }
+
 }

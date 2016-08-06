@@ -15,4 +15,6 @@ object P14 {
 
   def duplicateFolded[T](xs: List[T]): List[T] = xs.foldRight(List[T]())((x,acc) => x :: x :: acc)
 
+  def duplicateFlatMapped[T](xs: List[T]): List[T] = xs.flatMap(x => List(x, x))
+
 }
