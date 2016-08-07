@@ -1,7 +1,8 @@
+import scala.language.implicitConversions
+
 package arithmetic {
 
   class S99Int(val start: Int) {
-    import S99Int._
 
     def isPrime: Boolean =
       List.range(start-1, 1, -1).filter(i => (start % i) == 0).isEmpty
