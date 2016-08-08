@@ -1,5 +1,5 @@
 import org.scalatest._
-import P08._
+import lists.P08._
 
 class P08Spec extends FlatSpec with Matchers {
 

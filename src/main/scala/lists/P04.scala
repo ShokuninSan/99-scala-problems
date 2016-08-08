@@ -1,3 +1,5 @@
+package lists
+
 object P04 {
 
   def lengthBuiltin[A](l: List[A]): Int = l.length

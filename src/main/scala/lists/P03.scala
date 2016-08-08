@@ -1,3 +1,5 @@
+package lists
+
 object P03 {
 
   def nthBuiltin[A](idx: Int, l: List[A]): A = if (idx >=0) l(idx) else throw new NoSuchElementException

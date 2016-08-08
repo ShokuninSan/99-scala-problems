@@ -1,3 +1,5 @@
+package lists
+
 /**
 P12 (**) Decode a run-length encoded list.
 
@@ -10,6 +12,6 @@ res0: List[Symbol] = List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e
 */
 object P12 {
 
-  def decode[T](xs: List[(Int, T)]): List[T] = xs.flatMap(t => List.fill(t._1)(t._2)) 
+  def decode[T](xs: List[(Int, T)]): List[T] = xs.flatMap(t => List.fill(t._1)(t._2))
 
 }

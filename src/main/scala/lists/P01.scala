@@ -1,3 +1,5 @@
+package lists
+
 object P01 {
 
   def lastBuiltin[A](l: List[A]): A = l.last
