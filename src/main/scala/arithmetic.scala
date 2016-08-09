@@ -29,7 +29,7 @@ package arithmetic {
      * scala> 10.totient
      * res0: Int = 4
      */
-    def totient: Int = ???
+    def totient: Int = List.range(1, start, 1).filter(start.isCoprimeTo).length
   }
 
   object S99Int {
