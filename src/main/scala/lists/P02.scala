@@ -1,3 +1,5 @@
+package lists
+
 object P02 {
 
   def penultimateBuiltin[A](l: List[A]): A = if (l.length >= 2) l.init.last else throw new IllegalArgumentException

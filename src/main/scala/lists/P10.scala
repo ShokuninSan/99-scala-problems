@@ -1,3 +1,5 @@
+package lists
+
 /**
 P10 (*) Run-length encoding of a list.
 

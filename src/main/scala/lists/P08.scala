@@ -1,3 +1,5 @@
+package lists
+
 /**
 
 P08 (**) Eliminate consecutive duplicates of list elements.

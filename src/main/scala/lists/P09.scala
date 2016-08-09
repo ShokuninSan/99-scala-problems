@@ -1,3 +1,5 @@
+package lists
+
 /**
 P09 (**) Pack consecutive duplicates of list elements into sublists.
 

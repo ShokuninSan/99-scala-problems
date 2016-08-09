@@ -1,3 +1,5 @@
+package lists
+
 /**
 
 P07 (**) Flatten a nested list structure.

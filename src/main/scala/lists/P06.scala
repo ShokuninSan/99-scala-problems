@@ -1,3 +1,5 @@
+package lists
+
 /**
 
 P06 (*) Find out whether a list is a palindrome.

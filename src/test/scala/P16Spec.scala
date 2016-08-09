@@ -1,5 +1,5 @@
 import org.scalatest._
-import P16._
+import lists.P16._
 
 class P16Spec extends FlatSpec with Matchers {
 

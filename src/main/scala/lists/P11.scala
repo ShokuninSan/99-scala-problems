@@ -1,3 +1,5 @@
+package lists
+
 /**
 P11 (*) Modified run-length encoding.
 

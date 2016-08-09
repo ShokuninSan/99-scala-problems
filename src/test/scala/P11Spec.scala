@@ -1,5 +1,5 @@
 import org.scalatest._
-import P11._
+import lists.P11._
 
 class P11Spec extends FlatSpec with Matchers {
 
