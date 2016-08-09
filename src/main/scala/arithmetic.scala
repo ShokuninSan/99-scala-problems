@@ -30,6 +30,25 @@ package arithmetic {
      * res0: Int = 4
      */
     def totient: Int = List.range(1, start, 1).filter(start.isCoprimeTo).length
+
+    /** P35 (**) Determine the prime factors of a given positive integer.
+     * Construct a flat list containing the prime factors in ascending order.
+     * scala> 315.primeFactors
+     * res0: List[Int] = List(3, 3, 5, 7)
+     */
+    def primeFactors: List[Int] = {
+      // factorization tree algorithm see: https://www.khanacademy.org/math/in-sixth-grade-math/playing-numbers/prime-factorization/v/prime-factorization
+      val primes = (2 to start).filter(x => x.isPrime && !x.isCoprimeTo(start)).toList
+
+      def _do(n: Int, factors: List[Int]): List[Int] =
+        primes.find(x => n % x == 0) match {
+          case Some(factor) => _do(n / factor, factor :: factors)
+          case _ => factors
+        }
+
+      _do(start, Nil).reverse
+    }
+
   }
 
   object S99Int {
