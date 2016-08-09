@@ -50,6 +50,21 @@ package arithmetic {
       _do(start, Nil).reverse
     }
 
+    /**
+     * P36 (**) Determine the prime factors of a given positive integer (2).
+     * Construct a list containing the prime factors and their multiplicity.
+     * scala> 315.primeFactorMultiplicity
+     * res0: List[(Int, Int)] = List((3,2), (5,1), (7,1))
+     */
+    def primeFactorMultiplicity: List[(Int, Int)] = ???
+
+    /**
+     * P36 cont'd: Alternately, use a Map for the result.
+     * scala> 315.primeFactorMultiplicity
+     * res0: Map[Int,Int] = Map(3 -> 2, 5 -> 1, 7 -> 1)
+     */
+    def primeFactorMultiplicityMap: Map[Int, Int] = ???
+
   }
 
   object S99Int {
