@@ -56,14 +56,16 @@ package arithmetic {
      * scala> 315.primeFactorMultiplicity
      * res0: List[(Int, Int)] = List((3,2), (5,1), (7,1))
      */
-    def primeFactorMultiplicity: List[(Int, Int)] = ???
+    def primeFactorMultiplicity: List[(Int, Int)] =
+      lists.P13.encodeDirect(start.primeFactors).map(_.swap)
 
     /**
      * P36 cont'd: Alternately, use a Map for the result.
      * scala> 315.primeFactorMultiplicity
      * res0: Map[Int,Int] = Map(3 -> 2, 5 -> 1, 7 -> 1)
      */
-    def primeFactorMultiplicityMap: Map[Int, Int] = ???
+    def primeFactorMultiplicityMap: Map[Int, Int] =
+      primeFactorMultiplicity.toMap
 
   }
 
