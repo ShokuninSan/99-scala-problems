@@ -38,8 +38,9 @@ package arithmetic {
      */
     def primeFactors: List[Int] = {
       // factorization tree algorithm see: https://www.khanacademy.org/math/in-sixth-grade-math/playing-numbers/prime-factorization/v/prime-factorization
-      val primes = (2 to start).filter(x => x.isPrime && !x.isCoprimeTo(start)).toList
+      val primes = (2 to start).filter(x => x.isPrime && !x.isCoprimeTo(start)).toStream
 
+      @tailrec
       def _do(n: Int, factors: List[Int]): List[Int] =
         primes.find(x => n % x == 0) match {
           case Some(factor) => _do(n / factor, factor :: factors)
