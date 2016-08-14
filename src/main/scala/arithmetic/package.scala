@@ -13,7 +13,14 @@ package arithmetic {
      * res0: Boolean = true
      */
     def isPrime: Boolean =
-      List.range(start-1, 1, -1).filter(i => (start % i) == 0).isEmpty
+      // Borrowed from http://aperiodic.net/phil/scala/s-99/p31.scala:
+      // A fairly naive implementation for primality testing is simply: a number is
+      // prime if it it not divisible by any prime number less than or equal to its
+      // square root.
+      (start > 1) &&
+      primes
+        .takeWhile(_ <= Math.sqrt(start))
+        .forall(start % _ != 0)
 
     /**
      * P33 (*) Determine whether two positive integer numbers are coprime.
@@ -38,15 +45,12 @@ package arithmetic {
      */
     def primeFactors: List[Int] = {
       // factorization tree algorithm see: https://www.khanacademy.org/math/in-sixth-grade-math/playing-numbers/prime-factorization/v/prime-factorization
-      val primes = (2 to start).filter(x => x.isPrime && !x.isCoprimeTo(start)).toStream
-
       @tailrec
       def _do(n: Int, factors: List[Int]): List[Int] =
         primes.find(x => n % x == 0) match {
           case Some(factor) => _do(n / factor, factor :: factors)
           case _ => factors
         }
-
       _do(start, Nil).reverse
     }
 
@@ -89,7 +93,14 @@ package arithmetic {
   }
 
   object S99Int {
+
     implicit def int2S99Int(i: Int): S99Int = new S99Int(i)
+
+    // Borrowed from http://aperiodic.net/phil/scala/s-99/p31.scala:
+    // A fairly naive implementation for primality testing is simply: a number is
+    // prime if it it not divisible by any prime number less than or equal to its
+    // square root.
+    val primes = Stream.cons(2, Stream.from(3, 2).filter(_.isPrime))
 
     /**
      * P32 (**) Determine the greatest common divisor of two positive integer  * numbers.
